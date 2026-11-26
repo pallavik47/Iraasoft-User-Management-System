@@ -85,7 +85,7 @@ http://localhost:8090
 ![Dashboard](dashboard.png)
 
 ### Add User
-![Add User](Add user.png)
+![Add User](Adduser.png)
 
 ### Update User
 ![Update User](update.png)
