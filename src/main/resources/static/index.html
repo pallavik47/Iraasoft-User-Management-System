@@ -1,0 +1,225 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UserFlow | Admin Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="dashboard">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+        <div class="logo">
+            <span class="logo-icon">U</span>
+            <span>UserFlow</span>
+        </div>
+
+        <p class="menu-heading">MAIN MENU</p>
+
+        <nav>
+            <a href="#dashboard" class="nav-link active">
+                <span>▦</span> Dashboard
+            </a>
+
+            <a href="#users" class="nav-link">
+                <span>♙</span> Users
+            </a>
+
+            <a href="#add-user" class="nav-link">
+                <span>＋</span> Add User
+            </a>
+        </nav>
+
+        <div class="sidebar-bottom">
+            <p>USER MANAGEMENT SYSTEM</p>
+            <span>Powered by Spring Boot</span>
+        </div>
+    </aside>
+
+
+    <!-- MAIN CONTENT -->
+    <main class="main-content">
+
+        <!-- TOP HEADER -->
+        <header class="topbar">
+            <div>
+                <h2>Admin Dashboard</h2>
+                <p>Welcome back! Manage your users here.</p>
+            </div>
+
+            <div class="admin-profile">
+                <div class="avatar">A</div>
+                <div>
+                    <strong>Administrator</strong>
+                    <small>Admin</small>
+                </div>
+            </div>
+        </header>
+
+
+        <!-- DASHBOARD -->
+        <section id="dashboard" class="dashboard-section">
+
+            <div class="welcome-section">
+                <div>
+                    <h1>Dashboard Overview</h1>
+                    <p>Here's what's happening with your users.</p>
+                </div>
+            </div>
+
+
+            <!-- STATISTICS -->
+            <div class="stats-grid">
+
+                <div class="stat-card">
+                    <div class="stat-icon purple">♙</div>
+                    <p>Total Users</p>
+                    <h2 id="totalUsers">0</h2>
+                    <small>Registered users</small>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon green">＋</div>
+                    <p>New Users</p>
+                    <h2 id="newUsers">0</h2>
+                    <small>Added this session</small>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon orange">▤</div>
+                    <p>System Status</p>
+                    <h2>Active</h2>
+                    <small>Application running</small>
+                </div>
+
+            </div>
+
+
+            <!-- USER MANAGEMENT -->
+            <section id="users" class="content-card">
+
+                <div class="section-header">
+                    <div>
+                        <h2>User Management</h2>
+                        <p>View and manage registered users.</p>
+                    </div>
+
+                    <a href="#add-user" class="primary-btn">
+                        + Add New User
+                    </a>
+                </div>
+
+                <div class="search-container">
+                    <input
+                        type="text"
+                        id="searchInput"
+                        placeholder="Search users by name or email..."
+                    >
+                </div>
+
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>NAME</th>
+                                <th>EMAIL</th>
+                                <th>PHONE</th>
+                                <th>ACTIONS</th>
+                            </tr>
+                        </thead>
+
+                        <tbody id="userTableBody">
+                        </tbody>
+                    </table>
+                </div>
+
+            </section>
+
+
+            <!-- ADD / EDIT USER FORM -->
+            <section id="add-user" class="content-card form-card">
+
+                <div class="section-header">
+                    <div>
+                        <h2 id="formTitle">Add New User</h2>
+                        <p>Enter user information below.</p>
+                    </div>
+                </div>
+
+                <form id="userForm">
+
+                    <input type="hidden" id="userId">
+
+                    <div class="form-grid">
+
+                        <div class="form-group">
+                            <label for="name">Full Name</label>
+                            <input
+                                type="text"
+                                id="name"
+                                placeholder="Enter full name"
+                                required
+                            >
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input
+                                type="email"
+                                id="email"
+                                placeholder="Enter email address"
+                                required
+                            >
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input
+                                type="tel"
+                                id="phone"
+                                placeholder="Enter 10-digit phone number"
+                                pattern="[0-9]{10}"
+                                maxlength="10"
+                                required
+                            >
+                        </div>
+
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="submit" id="submitBtn"
+                                class="primary-btn">
+                            Add User
+                        </button>
+
+                        <button type="button" id="cancelBtn"
+                                class="secondary-btn"
+                                onclick="resetForm()" hidden>
+                            Cancel Edit
+                        </button>
+                    </div>
+
+                </form>
+
+            </section>
+
+        </section>
+
+        <footer>
+            UserFlow Admin Dashboard | Built with Java & Spring Boot
+        </footer>
+
+    </main>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
+
