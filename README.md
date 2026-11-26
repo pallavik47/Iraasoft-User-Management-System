@@ -79,6 +79,20 @@ mvnw.cmd spring-boot:run
 http://localhost:8090
 ```
 
+## Application Screenshots
+
+### Dashboard
+![Dashboard](dashboard.png)
+
+### Add User
+![Add User](Adduser.png)
+
+### Update User
+![Update User](update.png)
+
+### Delete User
+![Delete User](delete.png)
+
 ## Author
 
 Pallavi K
